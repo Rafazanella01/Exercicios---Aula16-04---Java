@@ -1,6 +1,5 @@
 package com.mycompany.exerciciofuncionarios;
 import com.mycompany.exerciciofuncionarios.Funcionario;
-import java.util.Iterator;
 import java.util.ArrayList;
 
 /**
