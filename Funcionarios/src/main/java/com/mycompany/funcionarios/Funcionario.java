@@ -1,4 +1,4 @@
-package com.mycompany.exerciciofuncionarios;
+package com.mycompany.funcionarios;
 
 /**
  *
@@ -46,4 +46,7 @@ public class Funcionario {
         return Salario;
     }
     
+     public String toString() {
+        return "Funcionario [Nome: " + Nome + ", Cargo: " + Cargo + ", Salario: " + Salario + "]";
+    }
 }

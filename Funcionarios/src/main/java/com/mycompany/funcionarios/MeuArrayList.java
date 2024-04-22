@@ -1,14 +1,12 @@
-package com.mycompany.exerciciofuncionarios;
-import com.mycompany.exerciciofuncionarios.Funcionario;
+package com.mycompany.funcionarios;
 import java.util.ArrayList;
-
+import com.mycompany.funcionarios.Funcionario;
 /**
  *
  * @author rafaz
  */
 public class MeuArrayList {
-      
-    ArrayList<Funcionario> ar = new ArrayList<Funcionario>();
+     ArrayList<Funcionario> ar = new ArrayList<Funcionario>();
     
     public void adicionarElementoArrayList(Funcionario funcionario)
     {

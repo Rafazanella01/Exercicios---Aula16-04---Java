@@ -1,4 +1,4 @@
-package com.mycompany.exerciciofuncionarios;
+package com.mycompany.funcionarios;
 
 /**
  *
