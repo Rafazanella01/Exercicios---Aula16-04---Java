@@ -4,6 +4,6 @@ package com.mycompany.funcionarios;
  *
  * @author rafaz
  */
-public class Enum {
-    
+public enum Enum{
+    Ceo, Desenvolvedor, Diretor
 }
