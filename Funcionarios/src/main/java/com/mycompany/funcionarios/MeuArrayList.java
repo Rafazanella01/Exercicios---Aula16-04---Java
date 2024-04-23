@@ -12,14 +12,39 @@ public class MeuArrayList {
      ArrayList<Funcionario> ar = new ArrayList<Funcionario>();
      Scanner sc = new Scanner(System.in);
     
-    public void adicionarElementoArrayList(Funcionario funcionario)
+    public void adicionarElementoArrayList()
     {
-        ar.add(funcionario);
+        System.out.println("Digite o nome do funcionario: ");
+        String nome = sc.nextLine();
+
+        System.out.println("Digite o cargo (CEO, Desenvolvedor, Diretor): ");
+        String cargoStr = sc.nextLine().toLowerCase();
+
+        Enum cargo = Enum.valueOf(cargoStr);
+        String cargoPronto = cargo.toString();
+        
+        System.out.println("Digite o salario: ");
+        double salario = sc.nextDouble();
+        sc.nextLine(); // Limpa o buffer de entrada
+
+        Funcionario func = new Funcionario(nome, cargoPronto, salario);
+
+        ar.add(func);
     }
     
-    public void excluirElementoArrayList(Funcionario funcionario)
+    public void excluirElementoArrayList()
     {
-        ar.remove(funcionario);
+        System.out.println("Digite o nome do funcionario que deseja excluir: ");
+        String nome = sc.nextLine();
+
+        for (Funcionario funcionario : ar) {
+            if (funcionario.getNome().equalsIgnoreCase(nome)) {
+                ar.remove(funcionario);
+                System.out.println("Funcionario removido com sucesso.");
+                return;
+            }
+        }
+        System.out.println("Funcionario nao encontrado.");
     }
     
     public void exibirElementosArrayList()
@@ -29,44 +54,41 @@ public class MeuArrayList {
         }
     } 
     
-    public void editarElementoArrayList(Funcionario funcionario)
+    public void editarElementoArrayList(String nome)
     {
-        int indice = ar.indexOf(funcionario);
-        
-        // é retornado -1 se não for encontrado o elemento
-        if (indice != -1){
-            System.out.println("Digite o elemento que voce deseja digitar(Nome, Cargo, Salario): ");
-            String op = sc.nextLine().toLowerCase();
-            
-            switch(op){
-                case "nome":
-                    System.out.println("Digite o nome a ser alterado: ");
-                    String novoNome = sc.nextLine();
-                    
-                    funcionario.setNome(novoNome);
-                    break;
-                case "cargo":
-                    System.out.println("Digite o novo cargo (Ceo, Desenvolver, Diretor): ");
-                    String novoCargoStr = sc.nextLine().toLowerCase();
-                    try {
-                        Enum novoCargo = Enum.valueOf(novoCargoStr);
-                        String novoCargoString = novoCargo.toString();
-                        funcionario.setCargo(novoCargoString);
-                    } catch (IllegalArgumentException e) {
-                        System.out.println("Cargo inválido.");
-                    }
-                    break;
-                case "salario":
-                    System.out.println("Digite o novo salario: ");
-                    double novoSalario = sc.nextDouble();
-                    funcionario.setSalario(novoSalario);
-                    break;
-                default:
-                    System.out.println("Opção invalida.");
-                    
+        for (Funcionario funcionario : ar) {
+            if (funcionario.getNome().equalsIgnoreCase(nome)) {
+                System.out.println("Digite o elemento que voce deseja editar (Nome, Cargo, Salario): ");
+                String op = sc.nextLine().toLowerCase();
+
+                switch (op) {
+                    case "nome":
+                        System.out.println("Digite o novo nome: ");
+                        String novoNome = sc.nextLine();
+                        funcionario.setNome(novoNome);
+                        break;
+                    case "cargo":
+                        System.out.println("Digite o novo cargo (CEO, Desenvolvedor, Diretor): ");
+                        String novoCargoStr = sc.nextLine().toLowerCase(); 
+                        try {
+                            Enum novoCargo = Enum.valueOf(novoCargoStr);
+                            String cargo = novoCargo.toString();
+                            funcionario.setCargo(cargo);
+                        } catch (IllegalArgumentException e) {
+                            System.out.println("Cargo invalido.");
+                        }
+                        break;
+                    case "salario":
+                        System.out.println("Digite o novo salario: ");
+                        double novoSalario = sc.nextDouble();
+                        funcionario.setSalario(novoSalario);
+                        break;
+                    default:
+                        System.out.println("Opcao invalida.");
+                }
+                return;
             }
-        } else{
-             System.out.println("Funcionario não encontrado.");
         }
+        System.out.println("Funcionario nao encontrado.");
     }
 }

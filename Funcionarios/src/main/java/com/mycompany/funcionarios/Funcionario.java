@@ -46,7 +46,12 @@ public class Funcionario {
         return Salario;
     }
     
-     public String toString() {
-        return "Funcionario [Nome: " + Nome + ", Cargo: " + Cargo + ", Salario: " + Salario + "]";
+    public String toString() {
+       return "Funcionario [Nome: " + Nome + ", Cargo: " + Cargo + ", Salario: " + Salario + "]";
+    }
+    
+    public void aumentaSalario(double novoSalario)
+    {
+       this.setSalario(novoSalario);
     }
 }
