@@ -1,0 +1,33 @@
+Link do repositório: https://github.com/Rafazanella01/Exercicios-Aula16-04-Java
+
+1 - Uso de Arrays
+
+Características:
+Utiliza a estrutura de dados básica e fundamental em Java, o array ([]).
+A capacidade do array é fixa e deve ser especificada durante a inicialização.
+Não oferece métodos ou funcionalidades específicas para manipulação dinâmica de elementos.
+Não possui mecanismos embutidos de sincronização para operações em threads múltiplas.
+Vantagens:
+Desempenho máximo: Arrays tendem a ser mais eficientes em termos de desempenho devido à sua simplicidade e ausência de overhead.
+Uso de memória otimizado: Arrays não possuem estruturas de dados adicionais, resultando em um uso eficiente de memória.
+Limitações:
+Capacidade fixa: Uma vez definido, o tamanho do array não pode ser alterado dinamicamente, o que pode ser problemático em situações onde a quantidade de elementos varia.
+Sincronização manual: Não há suporte embutido para operações concorrentes, exigindo sincronização manual se necessário.
+Falta de funcionalidades: Arrays não oferecem métodos convenientes para adicionar, remover ou manipular elementos.
+
+2 - Utilização de ArrayList
+
+Características:
+Implementa a interface List e oferece uma implementação dinâmica de um array redimensionável.
+A capacidade do ArrayList pode crescer dinamicamente à medida que mais elementos são adicionados.
+Fornece métodos convenientes para adicionar, remover, acessar e manipular elementos.
+Possui opções para sincronização embutida para operações em threads múltiplas.
+Vantagens:
+Flexibilidade: O ArrayList permite uma manipulação mais flexível e conveniente de elementos devido aos seus métodos embutidos.
+Redimensionamento dinâmico: A capacidade do ArrayList pode aumentar automaticamente conforme necessário, evitando limitações de tamanho.
+Sincronização embutida: O ArrayList oferece opções para sincronização embutida, tornando-o seguro para operações concorrentes em threads múltiplas.
+Limitações:
+Desempenho ligeiramente inferior: Devido ao seu redimensionamento dinâmico e possíveis operações de sincronização, o ArrayList pode ser ligeiramente menos eficiente em comparação com arrays simples em algumas situações.
+Conclusão:
+
+A escolha entre o uso de arrays e ArrayList em Java depende dos requisitos específicos do aplicativo. Se o desempenho máximo e a eficiência de memória forem críticos, os arrays podem ser a melhor opção. No entanto, se a flexibilidade, manipulação dinâmica de elementos e segurança para operações concorrentes forem importantes, o ArrayList oferece uma solução mais conveniente e robusta.
